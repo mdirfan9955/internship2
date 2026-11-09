@@ -1,0 +1,747 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Md Irfan | EduConnect</title>
+
+    <!-- CSS File -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Icons -->
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+<div class="dashboard-container">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+        <div class="logo">
+            <i class="fas fa-graduation-cap"></i>
+            <h2>Edu<span>Connect</span></h2>
+        </div>
+
+        <div class="student-mini-profile">
+            <img src="irfan.jpeg" alt="Student Profile">
+            <h3>Md Irfan</h3>
+            <p>Diploma in IT | 5th Sem</p>
+        </div>
+
+        <ul class="sidebar-menu">
+
+            <li>
+                <button class="menu-link active" data-page="dashboard">
+                    <i class="fas fa-house"></i>
+                    <span>Dashboard</span>
+                </button>
+            </li>
+
+            <li>
+                <button class="menu-link" data-page="profile">
+                    <i class="fas fa-user"></i>
+                    <span>My Profile</span>
+                </button>
+            </li>
+
+            <li>
+                <button class="menu-link" data-page="attendance">
+                    <i class="fas fa-calendar-check"></i>
+                    <span>Attendance</span>
+                </button>
+            </li>
+
+            <li>
+                <button class="menu-link" data-page="timetable">
+                    <i class="fas fa-clock"></i>
+                    <span>Timetable</span>
+                </button>
+            </li>
+
+            <li>
+                <button class="menu-link" data-page="assignments">
+                    <i class="fas fa-book"></i>
+                    <span>Assignments</span>
+                </button>
+            </li>
+
+            <li>
+                <button class="menu-link" data-page="results">
+                    <i class="fas fa-chart-line"></i>
+                    <span>Examination & Results</span>
+                </button>
+            </li>
+
+            <li>
+                <button class="menu-link" data-page="materials">
+                    <i class="fas fa-folder-open"></i>
+                    <span>Study Materials</span>
+                </button>
+            </li>
+
+            <li>
+                <button class="menu-link" data-page="tasks">
+                    <i class="fas fa-list-check"></i>
+                    <span>To-Do List</span>
+                </button>
+            </li>
+
+            <li>
+                <button class="menu-link" data-page="notes">
+                    <i class="fas fa-note-sticky"></i>
+                    <span>My Notes</span>
+                </button>
+            </li>
+
+            <li>
+                <button class="menu-link" data-page="calendar">
+                    <i class="fas fa-calendar-days"></i>
+                    <span>Calendar & Announcements</span>
+                </button>
+            </li>
+
+        </ul>
+
+        <div class="sidebar-bottom">
+            <button id="themeToggle">
+                <i class="fas fa-moon"></i>
+                <span>Dark Mode</span>
+            </button>
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+        <!-- TOP HEADER -->
+        <header class="top-header">
+
+            <div class="header-left">
+                <button id="menuToggle" class="menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+
+                <div>
+                    <h2 id="pageTitle">Dashboard</h2>
+                    <p>Welcome back, Md Irfan!</p>
+                </div>
+            </div>
+
+            <div class="header-right">
+
+                <button class="notification-btn" data-page="calendar">
+                    <i class="fas fa-bell"></i>
+                    <span class="notification-dot"></span>
+                </button>
+
+                <div class="header-profile">
+                    <img src="irfan.jpeg" alt="Profile">
+                    <div>
+                        <h4>Md Irfan</h4>
+                        <p>Student</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- ================= DASHBOARD PAGE ================= -->
+        <section class="page-section active" id="dashboard">
+
+            <div class="welcome-banner">
+                <div>
+                    <h1>Hello, Md Irfan! 👋</h1>
+                    <p>Welcome to your Student Dashboard.</p>
+                    <p>Manage your academic activities in one place.</p>
+                </div>
+                <i class="fas fa-graduation-cap"></i>
+            </div>
+
+            <div class="section-heading">
+                <h2>Academic Overview</h2>
+                <p>Your academic information at a glance.</p>
+            </div>
+
+            <div class="stats-container">
+
+                <div class="stat-card">
+                    <div class="stat-icon yellow">
+                        <i class="fas fa-calendar-check"></i>
+                    </div>
+                    <div>
+                        <h3>85%</h3>
+                        <p>Attendance</p>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon green">
+                        <i class="fas fa-book-open"></i>
+                    </div>
+                    <div>
+                        <h3 id="assignmentCount">0</h3>
+                        <p>Assignments</p>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon blue">
+                        <i class="fas fa-tasks"></i>
+                    </div>
+                    <div>
+                        <h3 id="taskCount">0</h3>
+                        <p>Pending Tasks</p>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon purple">
+                        <i class="fas fa-sticky-note"></i>
+                    </div>
+                    <div>
+                        <h3 id="noteCount">0</h3>
+                        <p>My Notes</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="dashboard-grid">
+
+                <div class="content-card">
+                    <div class="card-heading">
+                        <h3>My Profile</h3>
+                        <button class="text-btn" data-page="profile">View Profile</button>
+                    </div>
+
+                    <div class="profile-summary">
+                        <img src="irfan.jpeg" alt="Student">
+                        <div>
+                            <h3>Md Irfan</h3>
+                            <p>Diploma in Information Technology</p>
+                            <p>MANUU Polytechnic</p>
+                            <p>5th Semester</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-card">
+                    <div class="card-heading">
+                        <h3>Quick Actions</h3>
+                    </div>
+
+                    <div class="quick-actions">
+                        <button data-page="assignments">
+                            <i class="fas fa-book"></i>
+                            Assignments
+                        </button>
+
+                        <button data-page="timetable">
+                            <i class="fas fa-clock"></i>
+                            Timetable
+                        </button>
+
+                        <button data-page="notes">
+                            <i class="fas fa-note-sticky"></i>
+                            Notes
+                        </button>
+
+                        <button data-page="tasks">
+                            <i class="fas fa-list-check"></i>
+                            My Tasks
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="dashboard-grid">
+
+                <div class="content-card">
+                    <div class="card-heading">
+                        <h3>Upcoming Activities</h3>
+                        <button class="text-btn" data-page="calendar">View All</button>
+                    </div>
+                    <div id="dashboardActivities">
+                        <p class="empty-message">No upcoming activities yet.</p>
+                    </div>
+                </div>
+
+                <div class="content-card">
+                    <div class="card-heading">
+                        <h3>Recent Announcements</h3>
+                        <button class="text-btn" data-page="calendar">View All</button>
+                    </div>
+                    <div id="dashboardAnnouncements">
+                        <p class="empty-message">No announcements available.</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= PROFILE PAGE ================= -->
+        <section class="page-section" id="profile">
+
+            <div class="page-heading">
+                <h2>My Profile</h2>
+                <p>View your personal and academic information.</p>
+            </div>
+
+            <div class="content-card profile-page-card">
+
+                <div class="profile-cover">
+                    <img src="irfan.jpeg" alt="Student">
+                    <div>
+                        <h2>Md Irfan</h2>
+                        <p>Diploma in Information Technology</p>
+                    </div>
+                </div>
+
+                <h3>Personal Information</h3>
+
+                <div class="details-grid">
+                    <div><label>Full Name</label><p>Md Irfan</p></div>
+                    <div><label>Course</label><p>Diploma in IT</p></div>
+                    <div><label>University</label><p>Maulana Azad National Urdu University</p></div>
+                    <div><label>College</label><p>MANUU Polytechnic</p></div>
+                    <div><label>Semester</label><p>5th Semester</p></div>
+                    <div><label>Department</label><p>Information Technology</p></div>
+                </div>
+
+                <h3>Academic Information</h3>
+
+                <div class="details-grid">
+                    <div><label>Academic Status</label><p>Currently Studying</p></div>
+                    <div><label>Program</label><p>Diploma</p></div>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= ATTENDANCE PAGE ================= -->
+        <section class="page-section" id="attendance">
+
+            <div class="page-heading">
+                <h2>Attendance</h2>
+                <p>Check your subject-wise attendance records.</p>
+            </div>
+
+            <div class="stats-container">
+                <div class="stat-card">
+                    <div class="stat-icon yellow"><i class="fas fa-calendar-check"></i></div>
+                    <div><h3>85%</h3><p>Overall Attendance</p></div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon green"><i class="fas fa-check"></i></div>
+                    <div><h3>85</h3><p>Present Days</p></div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon purple"><i class="fas fa-xmark"></i></div>
+                    <div><h3>15</h3><p>Absent Days</p></div>
+                </div>
+            </div>
+
+            <div class="content-card">
+                <h3>Subject-wise Attendance</h3>
+
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Subject</th>
+                                <th>Total Classes</th>
+                                <th>Present</th>
+                                <th>Attendance</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Java Programming</td><td>40</td><td>35</td><td>87.5%</td></tr>
+                            <tr><td>Web Technology</td><td>40</td><td>34</td><td>85%</td></tr>
+                            <tr><td>Artificial Intelligence</td><td>35</td><td>30</td><td>85.7%</td></tr>
+                            <tr><td>Computer Networks</td><td>40</td><td>32</td><td>80%</td></tr>
+                            <tr><td>IoT</td><td>35</td><td>31</td><td>88.5%</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </section>
+
+
+        <!-- ================= TIMETABLE PAGE ================= -->
+        <section class="page-section" id="timetable">
+
+            <div class="page-heading">
+                <h2>Class Timetable</h2>
+                <p>Manage and view your daily class schedule.</p>
+            </div>
+
+            <div class="content-card">
+
+                <h3>Weekly Timetable</h3>
+
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Time</th>
+                                <th>Monday</th>
+                                <th>Tuesday</th>
+                                <th>Wednesday</th>
+                                <th>Thursday</th>
+                                <th>Friday</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>09:00 - 10:00</td>
+                                <td>Java</td><td>Web Tech</td><td>IoT</td><td>Java</td><td>AI & ML</td>
+                            </tr>
+                            <tr>
+                                <td>10:00 - 11:00</td>
+                                <td>Web Tech</td><td>Java</td><td>AI & ML</td><td>IoT</td><td>Java</td>
+                            </tr>
+                            <tr>
+                                <td>11:00 - 12:00</td>
+                                <td>IoT</td><td>AI & ML</td><td>Java</td><td>Web Tech</td><td>IoT</td>
+                            </tr>
+                            <tr>
+                                <td>12:00 - 01:00</td>
+                                <td colspan="5">Lunch Break</td>
+                            </tr>
+                            <tr>
+                                <td>01:00 - 02:00</td>
+                                <td>AI & ML</td><td>IoT</td><td>Web Tech</td><td>AI & ML</td><td>Web Tech</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= ASSIGNMENTS PAGE ================= -->
+        <section class="page-section" id="assignments">
+
+            <div class="page-heading">
+                <h2>Assignments</h2>
+                <p>Add, view and manage your assignments.</p>
+            </div>
+
+            <div class="content-card">
+
+                <h3>Add New Assignment</h3>
+
+                <form id="assignmentForm" class="data-form">
+
+                    <input type="text" id="assignmentTitle"
+                    placeholder="Assignment Title" required>
+
+                    <input type="text" id="assignmentSubject"
+                    placeholder="Subject Name" required>
+
+                    <input type="date" id="assignmentDate" required>
+
+                    <select id="assignmentStatus">
+                        <option value="Pending">Pending</option>
+                        <option value="Completed">Completed</option>
+                    </select>
+
+                    <button type="submit" class="primary-btn">
+                        <i class="fas fa-plus"></i> Add Assignment
+                    </button>
+
+                </form>
+
+            </div>
+
+            <div class="content-card">
+                <h3>My Assignments</h3>
+
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Title</th>
+                                <th>Subject</th>
+                                <th>Due Date</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="assignmentList">
+                            <tr><td colspan="5">No assignments added.</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </section>
+
+
+        <!-- ================= RESULTS PAGE ================= -->
+        <section class="page-section" id="results">
+
+            <div class="page-heading">
+                <h2>Examination & Results</h2>
+                <p>View your examination details and academic performance.</p>
+            </div>
+
+            <div class="stats-container">
+                <div class="stat-card">
+                    <div class="stat-icon yellow"><i class="fas fa-graduation-cap"></i></div>
+                    <div><h3>5th</h3><p>Current Semester</p></div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon green"><i class="fas fa-chart-line"></i></div>
+                    <div><h3>--</h3><p>Latest Result</p></div>
+                </div>
+            </div>
+
+            <div class="content-card">
+                <h3>Examination Details</h3>
+
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Examination</th>
+                                <th>Semester</th>
+                                <th>Result</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Semester Examination</td>
+                                <td>5th</td>
+                                <td>Not Declared</td>
+                                <td>Upcoming</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </section>
+
+
+        <!-- ================= STUDY MATERIALS PAGE ================= -->
+        <section class="page-section" id="materials">
+
+            <div class="page-heading">
+                <h2>Study Materials</h2>
+                <p>Access and manage your study resources.</p>
+            </div>
+
+            <div class="content-card">
+
+                <h3>Add Study Material</h3>
+
+                <form id="materialForm" class="data-form">
+
+                    <input type="text" id="materialName"
+                    placeholder="Material Name" required>
+
+                    <input type="text" id="materialSubject"
+                    placeholder="Subject Name" required>
+
+                    <input type="url" id="materialLink"
+                    placeholder="Enter Material URL" required>
+
+                    <button type="submit" class="primary-btn">
+                        <i class="fas fa-plus"></i> Add Material
+                    </button>
+
+                </form>
+
+            </div>
+
+            <div class="content-card">
+                <h3>My Study Resources</h3>
+
+                <div id="materialList">
+                    <p class="empty-message">No study materials added.</p>
+                </div>
+            </div>
+
+        </section>
+
+
+        <!-- ================= TO-DO LIST PAGE ================= -->
+        <section class="page-section" id="tasks">
+
+            <div class="page-heading">
+                <h2>My To-Do List</h2>
+                <p>Manage your daily tasks and activities.</p>
+            </div>
+
+            <div class="content-card">
+
+                <h3>Add New Task</h3>
+
+                <form id="taskForm" class="data-form">
+
+                    <input type="text" id="taskInput"
+                    placeholder="Enter your task" required>
+
+                    <input type="date" id="taskDate">
+
+                    <button type="submit" class="primary-btn">
+                        <i class="fas fa-plus"></i> Add Task
+                    </button>
+
+                </form>
+
+            </div>
+
+            <div class="content-card">
+                <h3>My Tasks</h3>
+                <div id="taskList">
+                    <p class="empty-message">No tasks added yet.</p>
+                </div>
+            </div>
+
+        </section>
+
+
+        <!-- ================= NOTES PAGE ================= -->
+        <section class="page-section" id="notes">
+
+            <div class="page-heading">
+                <h2>My Notes</h2>
+                <p>Create and manage your personal study notes.</p>
+            </div>
+
+            <div class="content-card">
+
+                <h3>Create New Note</h3>
+
+                <form id="noteForm" class="data-form">
+
+                    <input type="text" id="noteTitle"
+                    placeholder="Note Title" required>
+
+                    <textarea id="noteContent"
+                    placeholder="Write your notes here..."
+                    rows="5" required></textarea>
+
+                    <button type="submit" class="primary-btn">
+                        <i class="fas fa-save"></i> Save Note
+                    </button>
+
+                </form>
+
+            </div>
+
+            <div class="content-card">
+                <h3>Saved Notes</h3>
+
+                <div id="noteList" class="notes-grid">
+                    <p class="empty-message">No notes saved yet.</p>
+                </div>
+            </div>
+
+        </section>
+
+
+        <!-- ================= CALENDAR PAGE ================= -->
+        <section class="page-section" id="calendar">
+
+            <div class="page-heading">
+                <h2>Calendar & Announcements</h2>
+                <p>Keep track of important dates and updates.</p>
+            </div>
+
+            <div class="content-card">
+
+                <h3>Add Important Event</h3>
+
+                <form id="eventForm" class="data-form">
+
+                    <input type="text" id="eventTitle"
+                    placeholder="Event Title" required>
+
+                    <input type="date" id="eventDate" required>
+
+                    <textarea id="eventDescription"
+                    placeholder="Event Description" rows="3"></textarea>
+
+                    <button type="submit" class="primary-btn">
+                        <i class="fas fa-plus"></i> Add Event
+                    </button>
+
+                </form>
+
+            </div>
+
+            <div class="content-card">
+                <h3>Upcoming Events</h3>
+
+                <div id="eventList">
+                    <p class="empty-message">No events added yet.</p>
+                </div>
+            </div>
+
+            <div class="content-card">
+
+                <h3>Announcements</h3>
+
+                <form id="announcementForm" class="data-form">
+
+                    <input type="text" id="announcementTitle"
+                    placeholder="Announcement Title" required>
+
+                    <textarea id="announcementMessage"
+                    placeholder="Write announcement..." rows="3" required></textarea>
+
+                    <button type="submit" class="primary-btn">
+                        <i class="fas fa-bullhorn"></i> Add Announcement
+                    </button>
+
+                </form>
+
+                <div id="announcementList">
+                    <p class="empty-message">No announcements yet.</p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- FOOTER -->
+        <footer class="footer">
+            <p>© 2026 EduConnect | Designed for Md Irfan</p>
+            <p>MANUU Polytechnic | Diploma in IT</p>
+        </footer>
+
+    </main>
+
+</div>
+
+
+<!-- JavaScript File -->
+<script src="script.js"></script>
+
+</body>
+</html>
